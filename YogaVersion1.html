@@ -9,18 +9,19 @@
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fdfdfd;
+      background: #fff;
       color: #333;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: white;
-      padding: 80px 20px;
+      padding: 120px 20px;
       text-align: center;
     }
     header h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     nav {
       background: #333;
@@ -35,45 +36,52 @@
     }
     section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
     section h2 {
       color: #6ab04c;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      text-align: center;
     }
-    .classes {
+    .classes, .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
     }
-    .class-card {
-      background: #f5f5f5;
-      border-radius: 8px;
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
       padding: 20px;
-      width: 280px;
+      width: 300px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .class-card img {
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
     .testimonials {
       background: #f0fff0;
       padding: 40px;
-      border-radius: 8px;
+      border-radius: 10px;
     }
     .testimonial {
       margin-bottom: 20px;
       font-style: italic;
-    }
-    footer {
-      background: #6ab04c;
-      color: white;
       text-align: center;
-      padding: 20px;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #6ab04c;
     }
     .contact-form {
       display: flex;
@@ -83,21 +91,29 @@
       margin: auto;
     }
     .contact-form input, .contact-form textarea {
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 1em;
     }
     .contact-form button {
       background: #6ab04c;
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 6px;
+      padding: 14px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 1em;
     }
     .contact-form button:hover {
       background: #4a8f35;
+    }
+    footer {
+      background: #6ab04c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -110,6 +126,7 @@
   <nav>
     <a href="#classes">Classes</a>
     <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -117,18 +134,18 @@
   <section id="classes">
     <h2>Our Classes</h2>
     <div class="classes">
-      <div class="class-card">
-        <img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Beginner Yoga">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07a?auto=format&fit=crop&w=600&q=80" alt="Beginner Yoga">
         <h3>Beginner Yoga</h3>
-        <p>Perfect for newcomers to yoga. Gentle poses and breathing techniques.</p>
+        <p>Gentle poses and breathing techniques for newcomers.</p>
       </div>
-      <div class="class-card">
+      <div class="card">
         <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Advanced Yoga">
         <h3>Advanced Flow</h3>
         <p>Challenge yourself with advanced sequences and deeper stretches.</p>
       </div>
-      <div class="class-card">
-        <img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Meditation">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526401485004-2fda9f6d6c2a?auto=format&fit=crop&w=600&q=80" alt="Meditation">
         <h3>Meditation</h3>
         <p>Calm your mind and improve focus with guided meditation sessions.</p>
       </div>
@@ -137,14 +154,25 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>At Yoga Bliss, we believe in holistic wellness. Our certified instructors guide you through yoga practices that enhance flexibility, reduce stress, and bring harmony to your life.</p>
+    <p style="text-align:center;">At Yoga Bliss, we believe in holistic wellness. Our certified instructors guide you through yoga practices that enhance flexibility, reduce stress, and bring harmony to your life. We offer classes for all levels, from beginners to advanced practitioners, and special workshops on mindfulness and nutrition.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Yoga Pose"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Meditation"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1518611012118-f0c5d1d1d4c6?auto=format&fit=crop&w=600&q=80" alt="Yoga Class"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1526401485004-2fda9f6d6c2a?auto=format&fit=crop&w=600&q=80" alt="Studio"></div>
+    </div>
   </section>
 
   <section id="testimonials" class="testimonials">
     <h2>What Our Students Say</h2>
-    <div class="testimonial">"Yoga Bliss transformed my life. I feel healthier and more centered than ever!" – Priya</div>
-    <div class="testimonial">"The instructors are amazing and the classes are so calming." – Rahul</div>
-    <div class="testimonial">"I love the meditation sessions. They help me manage stress at work." – Ananya</div>
+    <div class="testimonial">"Yoga Bliss transformed my life. I feel healthier and more centered than ever!" <strong>– Priya</strong></div>
+    <div class="testimonial">"The instructors are amazing and the classes are so calming." <strong>– Rahul</strong></div>
+    <div class="testimonial">"I love the meditation sessions. They help me manage stress at work." <strong>– Ananya</strong></div>
+    <div class="testimonial">"The gallery inspired me to join — and it’s been the best decision!" <strong>– Sneha</strong></div>
   </section>
 
   <section id="contact">
