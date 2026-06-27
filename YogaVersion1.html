@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Bliss</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    nav {
+      background: #333;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #6ab04c;
+      margin-bottom: 20px;
+    }
+    .classes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .class-card {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .class-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .testimonials {
+      background: #f0fff0;
+      padding: 40px;
+      border-radius: 8px;
+    }
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    footer {
+      background: #6ab04c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .contact-form button {
+      background: #6ab04c;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .contact-form button:hover {
+      background: #4a8f35;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yoga Bliss</h1>
+    <p>Find your inner peace and balance</p>
+  </header>
+
+  <nav>
+    <a href="#classes">Classes</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="classes">
+    <h2>Our Classes</h2>
+    <div class="classes">
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Beginner Yoga">
+        <h3>Beginner Yoga</h3>
+        <p>Perfect for newcomers to yoga. Gentle poses and breathing techniques.</p>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Advanced Yoga">
+        <h3>Advanced Flow</h3>
+        <p>Challenge yourself with advanced sequences and deeper stretches.</p>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Meditation">
+        <h3>Meditation</h3>
+        <p>Calm your mind and improve focus with guided meditation sessions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Yoga Bliss, we believe in holistic wellness. Our certified instructors guide you through yoga practices that enhance flexibility, reduce stress, and bring harmony to your life.</p>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial">"Yoga Bliss transformed my life. I feel healthier and more centered than ever!" – Priya</div>
+    <div class="testimonial">"The instructors are amazing and the classes are so calming." – Rahul</div>
+    <div class="testimonial">"I love the meditation sessions. They help me manage stress at work." – Ananya</div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Yoga Bliss. All rights reserved.</p>
+  </footer>
+</body>
+</html>
