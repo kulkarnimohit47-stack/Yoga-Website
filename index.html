@@ -1,162 +1,310 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoga Bliss Pranayama Program</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DhyanYog</title>
 
-<style>
-body { font-family: Arial; margin:0; }
-
-header {
-  background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
-  color:white; text-align:center; padding:120px 20px;
-}
-header h1 { font-size:2.8em; }
-
-.btn {
-  background:#28a745; color:white;
-  padding:14px 25px; border-radius:8px;
-  text-decoration:none; display:inline-block; margin-top:15px;
-}
-
-.sticky-btn {
-  position:fixed; bottom:20px; right:20px;
-  background:#28a745; color:white;
-  padding:15px; border-radius:50px;
-}
-
-section { padding:50px 20px; max-width:1100px; margin:auto; }
-h2 { text-align:center; color:#28a745; }
-
-.flex { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-
-.card {
-  background:#f9f9f9; padding:20px; border-radius:10px;
-  width:300px; text-align:center;
-}
-
-.highlight { background:#f0fff0; padding:40px; border-radius:10px; }
-
-.pricing {
-  background:#fff3cd; padding:30px; text-align:center;
-  border-radius:10px;
-}
-
-</style>
-
+  <style>
+    :root { --green:#28a745; --card-bg:#f9f9f9; --highlight-bg:#f0fff0; }
+    body { font-family: Arial, sans-serif; margin:0; color:#222; }
+    .lang-toggle {
+      position:fixed; top:12px; right:12px;
+      background:#fff; color:#222; padding:8px 12px; border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.12); cursor:pointer; z-index:1000;
+    }
+    header {
+      background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=60') center/cover;
+      color:white; text-align:center; padding:120px 20px;
+    }
+    header h1 { font-size:2.2em; margin:0 0 8px; line-height:1.2; }
+    header p { margin:6px 0; }
+    .btn {
+      background:var(--green); color:white;
+      padding:12px 20px; border-radius:8px;
+      text-decoration:none; display:inline-block; margin-top:12px;
+    }
+    .sticky-btn {
+      position:fixed; bottom:20px; right:20px;
+      background:var(--green); color:white;
+      padding:12px 16px; border-radius:50px; text-decoration:none;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+    section { padding:50px 20px; max-width:1100px; margin:auto; }
+    h2 { text-align:center; color:var(--green); margin-top:0; }
+    .flex { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    .card {
+      background:var(--card-bg); padding:20px; border-radius:10px;
+      width:300px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.04);
+    }
+    .highlight { background:var(--highlight-bg); padding:40px; border-radius:10px; }
+    .pricing {
+      background:#fff3cd; padding:30px; text-align:center;
+      border-radius:10px;
+    }
+    /* Contact section styling */
+    .contact-section {
+      color:#fff; padding:60px 20px; border-radius:8px;
+      background:linear-gradient(120deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+      background-image:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.25)),
+        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=60');
+      background-size:cover; background-position:center;
+    }
+    form input, form textarea, form button {
+      font-size:16px; padding:10px; border-radius:6px; border:1px solid #ddd;
+    }
+    form input, form textarea { width:100%; box-sizing:border-box; }
+    form button { background:var(--green); color:#fff; border:none; cursor:pointer; }
+    .sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+    /* small screens */
+    @media (max-width:520px) {
+      header { padding:80px 16px; }
+      .card { width:100%; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Language toggle (will show current language) -->
+  <div id="langToggle" class="lang-toggle" role="button" aria-pressed="false" aria-label="Toggle language">EN</div>
 
-<header>
-  <h1>Reduce Stress, Anxiety & Improve Health with Pranayama</h1>
-  <p>Only 20 minutes daily • No experience needed</p>
-  <p><strong>⚡ Limited Seats Available</strong></p>
-  <a href="#pricing" class="btn">Join Now @ ₹999</a>
-</header>
+  <header>
+    <h1 data-i18n="header_title">Reduce Stress, Anxiety & Improve Health with Pranayama</h1>
+    <p data-i18n="header_sub">Only 30-45mins daily • No experience needed</p>
+    <p><strong data-i18n="header_cta_note">⚡ Limited Seats Available</strong></p>
+    <a href="#pricing" class="btn" data-i18n="header_cta">Join Now @ ₹999</a>
+  </header>
 
-<!-- PAIN POINTS -->
+  <!-- PAIN POINTS -->
+  <section>
+    <h2 data-i18n="pain_heading">Do You Feel Like This?</h2>
+    <div class="flex">
+      <div class="card" data-i18n="pain_1">😓 Constant Stress & Anxiety</div>
+      <div class="card" data-i18n="pain_2">😴 Low Energy & Poor Sleep</div>
+      <div class="card" data-i18n="pain_3">🤯 Overthinking & Lack of Focus</div>
+    </div>
+  </section>
 
-<section>
-<h2>Do You Feel Like This?</h2>
-<div class="flex">
-  <div class="card">😓 Constant Stress & Anxiety</div>
-  <div class="card">😴 Low Energy & Poor Sleep</div>
-  <div class="card">🤯 Overthinking & Lack of Focus</div>
-</div>
-</section>
+  <!-- BENEFITS -->
+  <section class="highlight">
+    <h2 data-i18n="benefit_heading">What You Will Achieve</h2>
+    <div class="flex">
+      <div class="card" data-i18n="benefit_1">🧠 Calm Mind & Better Focus</div>
+      <div class="card" data-i18n="benefit_2">💪 Stronger Lungs & Immunity</div>
+      <div class="card" data-i18n="benefit_3">❤️ Balanced Emotions</div>
+    </div>
+  </section>
 
-<!-- BENEFITS -->
+  <!-- PROGRAM -->
+  <section>
+    <h2 data-i18n="program_heading">Program Structure</h2>
+    <div class="flex">
+      <div class="card"><h3 data-i18n="week1_title">Week 1</h3><p data-i18n="week1_desc">Breathing Basics</p></div>
+      <div class="card"><h3 data-i18n="week2_title">Week 2</h3><p data-i18n="week2_desc">Kapalbhati & Anulom Vilom</p></div>
+      <div class="card"><h3 data-i18n="week3_title">Week 3</h3><p data-i18n="week3_desc">Advanced Techniques</p></div>
+      <div class="card"><h3 data-i18n="week4_title">Week 4</h3><p data-i18n="week4_desc">Meditation + Routine</p></div>
+    </div>
+  </section>
 
-<section class="highlight">
-<h2>What You Will Achieve</h2>
-<div class="flex">
-  <div class="card">🧠 Calm Mind & Better Focus</div>
-  <div class="card">💪 Stronger Lungs & Immunity</div>
-  <div class="card">❤️ Balanced Emotions</div>
-</div>
-</section>
+  <!-- TRANSFORMATION -->
+  <section class="highlight">
+    <h2 data-i18n="transform_heading">Before vs After</h2>
+    <p style="text-align:center;" data-i18n="transform_text">
+      Before: Stress, anxiety, low energy ❌<br>
+      After: Calm, focused, energetic life ✅
+    </p>
+  </section>
 
-<!-- PROGRAM -->
+  <!-- BONUSES -->
+  <section>
+    <h2 data-i18n="bonus_heading">Bonuses Worth ₹2000</h2>
+    <div class="flex">
+      <div class="card" data-i18n="bonus_1">📘 Free Diet Guide</div>
+      <div class="card" data-i18n="bonus_2">🎥 Recorded Sessions Access</div>
+      <div class="card" data-i18n="bonus_3">📱 WhatsApp Support</div>
+    </div>
+  </section>
 
-<section>
-<h2>Program Structure</h2>
-<div class="flex">
-  <div class="card"><h3>Week 1</h3><p>Breathing Basics</p></div>
-  <div class="card"><h3>Week 2</h3><p>Kapalbhati & Anulom Vilom</p></div>
-  <div class="card"><h3>Week 3</h3><p>Advanced Techniques</p></div>
-  <div class="card"><h3>Week 4</h3><p>Meditation + Routine</p></div>
-</div>
-</section>
+  <!-- TRUST -->
+  <section class="highlight">
+    <h2 data-i18n="trust_heading">Why Trust Us?</h2>
+    <p style="text-align:center;" data-i18n="trust_text">
+      ✔ 10+ Years Experience<br>
+      ✔ 500+ Students Trained<br>
+      ✔ Certified Yoga Trainer
+    </p>
+  </section>
 
-<!-- TRANSFORMATION -->
+  <!-- PRICING -->
+  <section id="pricing">
+    <h2 data-i18n="pricing_heading">Limited Time Offer</h2>
+    <div class="pricing">
+      <h3 data-i18n="price_now">₹999 Only</h3>
+      <p><strike data-i18n="price_old">₹1999</strike> <span data-i18n="price_off">(67% OFF)</span></p>
+      <p data-i18n="price_note">⏳ Offer Ending Soon</p>
+      <a href="#" class="btn" data-i18n="enroll_btn">Enroll Now</a>
+    </div>
+  </section>
 
-<section class="highlight">
-<h2>Before vs After</h2>
-<p style="text-align:center;">
-Before: Stress, anxiety, low energy ❌<br>
-After: Calm, focused, energetic life ✅
-</p>
-</section>
+  <!-- FAQ -->
+  <section>
+    <h2 data-i18n="faq_heading">FAQs</h2>
+    <p><strong data-i18n="faq_q1">Is this beginner friendly?</strong><br><span data-i18n="faq_a1">Yes</span></p>
+    <p><strong data-i18n="faq_q2">Time required?</strong><br><span data-i18n="faq_a2">20 minutes daily</span></p>
+    <p><strong data-i18n="faq_q3">Live or recorded?</strong><br><span data-i18n="faq_a3">Both</span></p>
+  </section>
 
-<!-- BONUSES -->
+  <!-- CONTACT -->
+  <section class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" data-i18n="contact_heading">Contact</h2>
 
-<section>
-<h2>Bonuses Worth ₹2000</h2>
-<div class="flex">
-  <div class="card">📘 Free Diet Guide</div>
-  <div class="card">🎥 Recorded Sessions Access</div>
-  <div class="card">📱 WhatsApp Support</div>
-</div>
-</section>
+    <form style="max-width:420px;margin:auto;display:flex;flex-direction:column;gap:10px;" onsubmit="event.preventDefault(); alert('Message sent (demo)');">
+      <label class="sr-only" for="name">Name</label>
+      <input id="name" name="name" placeholder="Name" required>
 
-<!-- TRUST -->
+      <label class="sr-only" for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="Email" required>
 
-<section class="highlight">
-<h2>Why Trust Us?</h2>
-<p style="text-align:center;">
-✔ 10+ Years Experience<br>
-✔ 5000+ Students Trained<br>
-✔ Certified Yoga Trainer
-</p>
-</section>
+      <label class="sr-only" for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
 
-<!-- PRICING -->
+      <button class="btn" type="submit" data-i18n="contact_send">Send</button>
+    </form>
+  </section>
 
-<section id="pricing">
-<h2>Limited Time Offer</h2>
-<div class="pricing">
-  <h3>₹999 Only</h3>
-  <p><strike>₹2999</strike> (67% OFF)</p>
-  <p>⏳ Offer Ending Soon</p>
-  <a href="#" class="btn">Enroll Now</a>
-</div>
-</section>
+  <a href="#pricing" class="sticky-btn" data-i18n="sticky_join">Join</a>
 
-<!-- FAQ -->
+  <script>
+    // Translations object: keys correspond to data-i18n attributes
+    const translations = {
+      en: {
+        header_title: "Reduce Stress, Anxiety & Improve Health with Pranayama",
+        header_sub: "Only 30-45mins daily • No experience needed",
+        header_cta_note: "⚡ Limited Seats Available",
+        header_cta: "Join Now @ ₹999",
+        pain_heading: "Do You Feel Like This?",
+        pain_1: "😓 Constant Stress & Anxiety",
+        pain_2: "😴 Low Energy & Poor Sleep",
+        pain_3: "🤯 Overthinking & Lack of Focus",
+        benefit_heading: "What You Will Achieve",
+        benefit_1: "🧠 Calm Mind & Better Focus",
+        benefit_2: "💪 Stronger Lungs & Immunity",
+        benefit_3: "❤️ Balanced Emotions",
+        program_heading: "Program Structure",
+        week1_title: "Week 1", week1_desc: "Breathing Basics",
+        week2_title: "Week 2", week2_desc: "Kapalbhati & Anulom Vilom",
+        week3_title: "Week 3", week3_desc: "Advanced Techniques",
+        week4_title: "Week 4", week4_desc: "Meditation + Routine",
+        transform_heading: "Before vs After",
+        transform_text: "Before: Stress, anxiety, low energy ❌<br>After: Calm, focused, energetic life ✅",
+        bonus_heading: "Bonuses Worth ₹2000",
+        bonus_1: "📘 Free Diet Guide",
+        bonus_2: "🎥 Recorded Sessions Access",
+        bonus_3: "📱 WhatsApp Support",
+        trust_heading: "Why Trust Us?",
+        trust_text: "✔ 10+ Years Experience<br>✔ 500+ Students Trained<br>✔ Certified Yoga Trainer",
+        pricing_heading: "Limited Time Offer",
+        price_now: "₹999 Only",
+        price_old: "₹1999",
+        price_off: "(67% OFF)",
+        price_note: "⏳ Offer Ending Soon",
+        enroll_btn: "Enroll Now",
+        faq_heading: "FAQs",
+        faq_q1: "Is this beginner friendly?", faq_a1: "Yes",
+        faq_q2: "Time required?", faq_a2: "20 minutes daily",
+        faq_q3: "Live or recorded?", faq_a3: "Both",
+        contact_heading: "Contact",
+        contact_send: "Send",
+        sticky_join: "Join"
+      },
+      mr: {
+        header_title: "प्राणायामाने ताण, चिंता कमी करा आणि आरोग्य सुधारित करा",
+        header_sub: "फक्त 30-45 मिनिटे दररोज • कोणतेही अनुभव आवश्यक नाही",
+        header_cta_note: "⚡ मर्यादित आसने उपलब्ध",
+        header_cta: "सुरू करा @ ₹999",
+        pain_heading: "आपण असे वाटते का?",
+        pain_1: "😓 सतत ताण आणि चिंता",
+        pain_2: "😴 ऊर्जेत घट आणि झोपेची समस्या",
+        pain_3: "🤯 अतिकिंतन आणि एकाग्रतेचा अभाव",
+        benefit_heading: "आपण काय साध्य कराल",
+        benefit_1: "🧠 शांत मन आणि सुधारलेली एकाग्रता",
+        benefit_2: "💪 मजबूत फुफ्फुसे आणि रोगप्रतिकारक क्षमता",
+        benefit_3: "❤️ संतुलित भावना",
+        program_heading: "कार्यक्रम संरचना",
+        week1_title: "आठवडा 1", week1_desc: "श्वसन मूलतत्त्वे",
+        week2_title: "आठवडा 2", week2_desc: "कपालभाती व अनुलोम विलोम",
+        week3_title: "आठवडा 3", week3_desc: "प्रगत तंत्रे",
+        week4_title: "आठवडा 4", week4_desc: "ध्यान + दिनचर्या",
+        transform_heading: "पूर्वी व नंतर",
+        transform_text: "पूर्वी: ताण, चिंता, कमी ऊर्जा ❌<br>नंतर: शांत, एकाग्र आणि ऊर्जस्वित जीवन ✅",
+        bonus_heading: "बोनस मूल्य ₹2000",
+        bonus_1: "📘 मोफत आहार मार्गदर्शक",
+        bonus_2: "🎥 रेकॉर्ड केलेल्या सत्रांची प्रवेश",
+        bonus_3: "📱 व्हॉट्सअॅप समर्थन",
+        trust_heading: "आमच्यावर का विश्वास ठेवा?",
+        trust_text: "✔ 10+ वर्षांचे अनुभव<br>✔ 500+ विद्यार्थ्यांचे प्रशिक्षण<br>✔ प्रमाणित योग प्रशिक्षक",
+        pricing_heading: "सीमित कालावधीची ऑफर",
+        price_now: "फक्त ₹999",
+        price_old: "₹1999",
+        price_off: "(67% सूट)",
+        price_note: "⏳ ऑफर लवकर संपणार आहे",
+        enroll_btn: "नोंदणी करा",
+        faq_heading: "सामान्य प्रश्न",
+        faq_q1: "हे नवशिक्यासाठी योग्य आहे का?", faq_a1: "होय",
+        faq_q2: "किती वेळ लागतो?", faq_a2: "दररोज 20 मिनिटे",
+        faq_q3: "लाइव्ह की रेकॉर्ड केलेले?", faq_a3: "दोन्ही",
+        contact_heading: "संपर्क",
+        contact_send: "पाठवा",
+        sticky_join: "सुरू करा"
+      }
+    };
 
-<section>
-<h2>FAQs</h2>
-<p><strong>Is this beginner friendly?</strong><br>Yes</p>
-<p><strong>Time required?</strong><br>20 minutes daily</p>
-<p><strong>Live or recorded?</strong><br>Both</p>
-</section>
+    // helper to apply a language to all [data-i18n] elements
+    function applyLang(lang) {
+      document.documentElement.lang = (lang === 'mr') ? 'mr' : 'en';
+      const nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (!key) return;
+        const value = translations[lang] && translations[lang][key];
+        if (value !== undefined) {
+          // use innerHTML to preserve <br> and simple markup used in translations
+          el.innerHTML = value;
+        }
+      });
+      // update toggle display and accessibility
+      const toggle = document.getElementById('langToggle');
+      toggle.textContent = (lang === 'mr') ? 'मराठी' : 'EN';
+      toggle.setAttribute('aria-pressed', lang === 'mr' ? 'true' : 'false');
+      localStorage.setItem('preferredLang', lang);
+    }
 
-<!-- CONTACT -->
+    // toggle between 'en' and 'mr'
+    function toggleLang() {
+      const current = localStorage.getItem('preferredLang') || 'en';
+      const next = current === 'mr' ? 'en' : 'mr';
+      applyLang(next);
+    }
 
-<section>
-<h2>Contact</h2>
-<form style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:10px;">
-<input placeholder="Name">
-<input placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
-</section>
+    // init on load
+    document.addEventListener('DOMContentLoaded', () => {
+      // init preferred language
+      const preferred = localStorage.getItem('preferredLang') || 'en';
+      applyLang(preferred);
 
-<a href="#pricing" class="sticky-btn">Join</a>
+      // wire up toggle
+      const toggle = document.getElementById('langToggle');
+      toggle.addEventListener('click', toggleLang);
 
+      // allow keyboard activation
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleLang();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
