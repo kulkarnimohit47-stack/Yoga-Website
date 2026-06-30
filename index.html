@@ -1,192 +1,162 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yoga Bliss</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 120px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3.5em;
-      margin: 0;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    }
-    nav {
-      background: #333;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    section h2 {
-      color: #6ab04c;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .classes, .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-    .card {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .testimonials {
-      background: #f0fff0;
-      padding: 40px;
-      border-radius: 10px;
-    }
-    .testimonial {
-      margin-bottom: 20px;
-      font-style: italic;
-      text-align: center;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 10px;
-      font-style: normal;
-      color: #6ab04c;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-    .contact-form button {
-      background: #6ab04c;
-      color: white;
-      border: none;
-      padding: 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-    .contact-form button:hover {
-      background: #4a8f35;
-    }
-    footer {
-      background: #6ab04c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga Bliss Pranayama Program</title>
+
+<style>
+body { font-family: Arial; margin:0; }
+
+header {
+  background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
+  color:white; text-align:center; padding:120px 20px;
+}
+header h1 { font-size:2.8em; }
+
+.btn {
+  background:#28a745; color:white;
+  padding:14px 25px; border-radius:8px;
+  text-decoration:none; display:inline-block; margin-top:15px;
+}
+
+.sticky-btn {
+  position:fixed; bottom:20px; right:20px;
+  background:#28a745; color:white;
+  padding:15px; border-radius:50px;
+}
+
+section { padding:50px 20px; max-width:1100px; margin:auto; }
+h2 { text-align:center; color:#28a745; }
+
+.flex { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+
+.card {
+  background:#f9f9f9; padding:20px; border-radius:10px;
+  width:300px; text-align:center;
+}
+
+.highlight { background:#f0fff0; padding:40px; border-radius:10px; }
+
+.pricing {
+  background:#fff3cd; padding:30px; text-align:center;
+  border-radius:10px;
+}
+
+</style>
+
 </head>
+
 <body>
-  <header>
-    <h1>Yoga Bliss</h1>
-    <p>Find your inner peace and balance</p>
-  </header>
 
-  <nav>
-    <a href="#classes">Classes</a>
-    <a href="#about">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+  <h1>Reduce Stress, Anxiety & Improve Health with Pranayama</h1>
+  <p>Only 20 minutes daily • No experience needed</p>
+  <p><strong>⚡ Limited Seats Available</strong></p>
+  <a href="#pricing" class="btn">Join Now @ ₹999</a>
+</header>
 
-  <section id="classes">
-    <h2>Our Classes</h2>
-    <div class="classes">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07a?auto=format&fit=crop&w=600&q=80" alt="Beginner Yoga">
-        <h3>Beginner Yoga</h3>
-        <p>Gentle poses and breathing techniques for newcomers.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Advanced Yoga">
-        <h3>Advanced Flow</h3>
-        <p>Challenge yourself with advanced sequences and deeper stretches.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1526401485004-2fda9f6d6c2a?auto=format&fit=crop&w=600&q=80" alt="Meditation">
-        <h3>Meditation</h3>
-        <p>Calm your mind and improve focus with guided meditation sessions.</p>
-      </div>
-    </div>
-  </section>
+<!-- PAIN POINTS -->
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center;">At Yoga Bliss, we believe in holistic wellness. Our certified instructors guide you through yoga practices that enhance flexibility, reduce stress, and bring harmony to your life. We offer classes for all levels, from beginners to advanced practitioners, and special workshops on mindfulness and nutrition.</p>
-  </section>
+<section>
+<h2>Do You Feel Like This?</h2>
+<div class="flex">
+  <div class="card">😓 Constant Stress & Anxiety</div>
+  <div class="card">😴 Low Energy & Poor Sleep</div>
+  <div class="card">🤯 Overthinking & Lack of Focus</div>
+</div>
+</section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <div class="card"><img src="https://images.unsplash.com/photo-1552196563-55cd4a1c2d8b?auto=format&fit=crop&w=600&q=80" alt="Yoga Pose"></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Meditation"></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1518611012118-f0c5d1d1d4c6?auto=format&fit=crop&w=600&q=80" alt="Yoga Class"></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1526401485004-2fda9f6d6c2a?auto=format&fit=crop&w=600&q=80" alt="Studio"></div>
-    </div>
-  </section>
+<!-- BENEFITS -->
 
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Students Say</h2>
-    <div class="testimonial">"Yoga Bliss transformed my life. I feel healthier and more centered than ever!" <strong>– Priya</strong></div>
-    <div class="testimonial">"The instructors are amazing and the classes are so calming." <strong>– Rahul</strong></div>
-    <div class="testimonial">"I love the meditation sessions. They help me manage stress at work." <strong>– Ananya</strong></div>
-    <div class="testimonial">"The gallery inspired me to join — and it’s been the best decision!" <strong>– Sneha</strong></div>
-  </section>
+<section class="highlight">
+<h2>What You Will Achieve</h2>
+<div class="flex">
+  <div class="card">🧠 Calm Mind & Better Focus</div>
+  <div class="card">💪 Stronger Lungs & Immunity</div>
+  <div class="card">❤️ Balanced Emotions</div>
+</div>
+</section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<!-- PROGRAM -->
 
-  <footer>
-    <p>&copy; 2026 Yoga Bliss. All rights reserved.</p>
-  </footer>
+<section>
+<h2>Program Structure</h2>
+<div class="flex">
+  <div class="card"><h3>Week 1</h3><p>Breathing Basics</p></div>
+  <div class="card"><h3>Week 2</h3><p>Kapalbhati & Anulom Vilom</p></div>
+  <div class="card"><h3>Week 3</h3><p>Advanced Techniques</p></div>
+  <div class="card"><h3>Week 4</h3><p>Meditation + Routine</p></div>
+</div>
+</section>
+
+<!-- TRANSFORMATION -->
+
+<section class="highlight">
+<h2>Before vs After</h2>
+<p style="text-align:center;">
+Before: Stress, anxiety, low energy ❌<br>
+After: Calm, focused, energetic life ✅
+</p>
+</section>
+
+<!-- BONUSES -->
+
+<section>
+<h2>Bonuses Worth ₹2000</h2>
+<div class="flex">
+  <div class="card">📘 Free Diet Guide</div>
+  <div class="card">🎥 Recorded Sessions Access</div>
+  <div class="card">📱 WhatsApp Support</div>
+</div>
+</section>
+
+<!-- TRUST -->
+
+<section class="highlight">
+<h2>Why Trust Us?</h2>
+<p style="text-align:center;">
+✔ 10+ Years Experience<br>
+✔ 5000+ Students Trained<br>
+✔ Certified Yoga Trainer
+</p>
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+<h2>Limited Time Offer</h2>
+<div class="pricing">
+  <h3>₹999 Only</h3>
+  <p><strike>₹2999</strike> (67% OFF)</p>
+  <p>⏳ Offer Ending Soon</p>
+  <a href="#" class="btn">Enroll Now</a>
+</div>
+</section>
+
+<!-- FAQ -->
+
+<section>
+<h2>FAQs</h2>
+<p><strong>Is this beginner friendly?</strong><br>Yes</p>
+<p><strong>Time required?</strong><br>20 minutes daily</p>
+<p><strong>Live or recorded?</strong><br>Both</p>
+</section>
+
+<!-- CONTACT -->
+
+<section>
+<h2>Contact</h2>
+<form style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:10px;">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send</button>
+</form>
+</section>
+
+<a href="#pricing" class="sticky-btn">Join</a>
+
 </body>
 </html>
